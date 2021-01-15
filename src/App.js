@@ -2,6 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const cardsItems = [];
+  let cardsNumber;
+  let min = 4;
+  let max = 16;
+ cardsNumber = Math.floor(Math.random()*(max-min+1)+min);
+  if (cardsNumber%2 !== 0) {
+    cardsNumber = cardsNumber +1;
+  }
+  for (let i=0; i<=cardsNumber-1; i++)
+  {
+    cardsItems.push(
+        <div class="card-scene">
+          <div class="card-inner">
+            <div class="card-front"></div>
+            <div class="card-back"></div>
+          </div>
+        </div>
+      )
+  }
+
+  
+
+   
   return (
     <div class="main-background">
     <div class="grid">
@@ -53,133 +76,7 @@ function App() {
 
       <div class="main-container">
         <div class="cards-container">
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-          
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-          
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
-  
-         
-          <div class="card-scene">
-            <div class="card-inner">
-              <div class="card-front"></div>
-              <div class="card-back"></div>
-            </div>
-          </div>
+         {cardsItems}           
         </div>
         <div class="buttons-container">
           <button class="btn btn1">Joc Nou</button> 
