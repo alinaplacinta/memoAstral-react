@@ -1,0 +1,470 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 105, 105);
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.5px;
+}
+
+.main-background {
+ background-image:  url("images/universe.jpg"); 
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: black;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.dot {
+  width: 9px;
+  background-color: rgb(35, 13, 68);
+  height: 9px;
+  border-radius: 100%;
+}
+
+.line {
+  width: 49px;
+  height: 1px;
+  background-color: rgb(35, 13, 68);
+}
+
+.hamburger-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0px;
+}
+
+.hamburger-container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0px;
+}
+
+.line1 {
+  width: 40px;
+}
+
+.hamburger-line.h-line-middle {
+  margin: 5px 0px;
+}
+
+.hamburger-container:hover .h-line-top {
+  transform: translateY(10px) rotate(35deg);
+}
+
+.hamburger-container:hover .h-line-middle {
+  opacity: 0;
+}
+
+.hamburger-container:hover .h-line-bottom {
+  transform: translateY(-18px) rotate(-35deg);
+}
+
+.h-line-bottom, .h-line-middle, .h-line-top {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.dropdown-container {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.vertical-menu {
+  width: 100%;
+  height: auto;
+  background-color: rgb(226, 124, 99);
+}
+
+.vertical-menu a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: block;
+  padding: 12px;
+  text-align: center;
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(202, 89, 54);
+}
+
+.menu:hover .dropdown-container {
+  display: block;
+}
+
+.menu {
+  width: 85px;
+  z-index: 1;
+  position: relative;
+}
+
+.grid {
+  width: 1200px;
+  margin: 0px auto;
+  height: auto;
+  min-height: 100vH;
+  padding-top: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.count-container-col {
+  background-color: rgb(39, 14, 53);
+  padding: 15px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+}
+
+.count-container {
+  display: flex;
+}
+
+.count-container-col.score {
+  margin-right: 10px;
+}
+
+.sun-container {
+  margin: 0px auto;
+  width: 60%;
+}
+
+.animated-obj {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("images/sun.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: 7s ease 0s infinite normal none running animated-obj;
+}
+
+@keyframes animated-obj {
+  0% {
+      transform: rotate(0deg);
+      left: 0px;
+  }
+
+  25% {
+      transform: rotate(20deg);
+      left: 0px;
+  }
+
+  50% {
+      transform: rotate(0deg);
+      left: 90%;
+  }
+
+  75% {
+      transform: rotate(0deg);
+      left: 90%;
+  }
+
+  100% {
+      transform: rotate(-360deg);
+      left: 0px;
+  }
+}
+
+.main-container {
+  width: 368px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px auto 0px;
+}
+
+.cards-container {
+  width: 100%;
+}
+
+.card-scene {
+  width: 92px;
+  height: 117px;
+  background-color: transparent;
+  perspective: 1000px;
+  float: left;
+  padding: 3px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out 0s;
+  transform-style: preserve-3d;
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image: url("images/hand.png");
+  background-size: 60%;
+  background-color: rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0s ease 0s;
+  border-radius: 5px;
+}
+
+.card-back {
+  background-color: rgb(230, 149, 149);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-image: url("images/moon-front.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+}
+
+.card-scene:active .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front:hover {
+  background-size: 62%;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 19px;
+}
+
+button.btn {
+  width: 148px;
+  padding: 7px 0px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.btn1 {
+  background-color: rgb(35, 13, 68);
+  color: rgb(255, 255, 255);
+  transition: all 0.2s ease 0s;
+}
+
+.btn2 {
+  background-color: rgb(255, 255, 255);
+}
+
+.btn1:hover {
+  background-color: rgb(9, 2, 20);
+}
+
+.animated-line {
+  width: 60px;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.animation-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 188px;
+  margin: 69px auto 0px;
+}
+
+.center-circle {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+}
+
+.dotted-circles {
+  width: 30px;
+  height: 30px;
+  border: 1px dashed rgb(255, 255, 255);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-line1 {
+  left: 0px;
+}
+
+.animated-line2 {
+  right: 0px;
+}
+
+.animation-container:hover .animated-line1 {
+  position: relative;
+  left: 21px;
+}
+
+.animation-container:hover .animated-line2 {
+  position: relative;
+  right: 21px;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+      width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  @keyframes animated-obj {
+      0% {
+          transform: rotate(0deg);
+          left: 0px;
+      }
+
+      25% {
+          transform: rotate(20deg);
+          left: 0px;
+      }
+
+      50% {
+          transform: rotate(0deg);
+          left: 85%;
+      }
+
+      75% {
+          transform: rotate(0deg);
+          left: 85%;
+      }
+
+      100% {
+          transform: rotate(-360deg);
+          left: 0px;
+      }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dot {
+      width: 7px;
+      height: 7px;
+  }
+
+  .line {
+      width: 40px;
+  }
+
+  .line1 {
+      width: 34px;
+  }
+
+  .menu {
+      width: 63px;
+  }
+
+  .count-container-col {
+      background-color: rgb(39, 14, 53);
+      color: rgb(255, 255, 255);
+  }
+
+  .count-container-col {
+      font-size: 12px;
+  }
+
+  .hamburger-container:hover .h-line-bottom {
+      transform: translateY(-12px) rotate(-35deg);
+  }
+
+  .hamburger-container:hover .h-line-top {
+      transform: translateY(13px) rotate(35deg);
+  }
+
+  .animated-obj {
+      width: 60px;
+      height: 60px;
+  }
+
+  .card-scene {
+      width: 70px;
+      height: 101px;
+  }
+
+  .main-container {
+      width: 280px;
+  }
+
+  .buttons-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  button.btn {
+      font-size: 13px;
+  }
+
+  button.btn.btn1 {
+      margin-bottom: 10px;
+  }
+
+  .animation-container {
+      transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card-scene {
+      width: 66px;
+      height: 96px;
+  }
+
+  .main-container {
+      width: 264px;
+  }
+
+  .buttons-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  button.btn {
+      font-size: 13px;
+  }
+
+  button.btn.btn1 {
+      margin-bottom: 10px;
+  }
+
+  .animation-container {
+      transform: scale(0.9);
+  }
+}
